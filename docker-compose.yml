@@ -1,0 +1,14 @@
+#db:
+#  image: "mongo"
+#  ports:
+#    -"27017:27017"
+calc:
+  build: .
+  volumes:
+    - ./app:/home/app/calc
+    - /home/app/calc/node_modules
+  ports:
+    - "3030:3000"
+    - "35729:35729"
+#  links:
+#    - db
